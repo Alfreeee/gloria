@@ -122,32 +122,32 @@ public class DataInitializer implements ApplicationRunner {
 
         sentExam1.getSentenceExercises().add(makeSentence(sentExam1,
             "She didn't manage to finish the report.", "SUCCEED",
-            "She didn't succeed in finishing the report.",
+            "She didn't", "succeed in finishing", "the report.",
             "SUCCEED richiede la preposizione 'in' seguita dal gerundio (-ing).", 1));
         
         sentExam1.getSentenceExercises().add(makeSentence(sentExam1,
             "It's possible that he missed the train.", "MIGHT",
-            "He might have missed the train.",
+            "He", "might have missed", "the train.",
             "Possibilità al passato: modal might + have + past participle.", 2));
         
         sentExam1.getSentenceExercises().add(makeSentence(sentExam1,
             "They are renovating the town hall at the moment.", "BEING",
-            "The town hall is being renovated at the moment.",
+            "The town hall", "is being renovated", "at the moment.",
             "Present continuous passive: is/are + being + past participle.", 3));
         
         sentExam1.getSentenceExercises().add(makeSentence(sentExam1,
             "I last spoke to her three years ago.", "FOR",
-            "I haven't spoken to her for three years.",
+            "I", "haven't spoken to her for", "three years.",
             "L'azione passata si traduce con il Present Perfect Negative + for.", 4));
 
         sentExam1.getSentenceExercises().add(makeSentence(sentExam1,
             "If you don't study harder, you will fail the exam.", "UNLESS",
-            "Unless you study harder, you will fail the exam.",
+            "Unless", "you study harder, you", "will fail the exam.",
             "UNLESS significa 'if not', quindi sostituisce la condizione negativa.", 5));
 
         sentExam1.getSentenceExercises().add(makeSentence(sentExam1,
             "They say that the company is losing millions.", "SAID",
-            "The company is said to be losing millions.",
+            "The company", "is said to be losing", "millions.",
             "Struttura passiva impersonale avanzata (Passive Infinitive).", 6));
 
         examRepository.save(sentExam1);
@@ -164,32 +164,32 @@ public class DataInitializer implements ApplicationRunner {
 
         sentExam2.getSentenceExercises().add(makeSentence(sentExam2,
             "As soon as he arrived, the storm started.", "SOONER",
-            "No sooner had he arrived than the storm started.",
+            "No sooner", "had he arrived than", "the storm started.",
             "Inversione enfatica: 'No sooner... than' richiede l'ausiliare prima del soggetto.", 1));
 
         sentExam2.getSentenceExercises().add(makeSentence(sentExam2,
             "I really don't want to go out tonight.", "FEEL",
-            "I don't feel like going out tonight.",
+            "I don't", "feel like going out", "tonight.",
             "L'espressione idiomatica 'feel like' richiede la forma in -ing.", 2));
 
         sentExam2.getSentenceExercises().add(makeSentence(sentExam2,
             "The flight was canceled because of the heavy fog.", "DUE",
-            "The flight was canceled due to the heavy fog.",
+            "The flight was canceled", "due to the", "heavy fog.",
             "'Due to' introduce la causa ed equivale a 'because of'.", 3));
 
         sentExam2.getSentenceExercises().add(makeSentence(sentExam2,
             "It was a mistake for you to type that letter.", "SHOULD",
-            "You should not have typed that letter.",
+            "You", "should not have typed", "that letter.",
             "Rimpianto/critica al passato: should + not + have + past participle.", 4));
 
         sentExam2.getSentenceExercises().add(makeSentence(sentExam2,
             "He has a very good relationship with his boss.", "GETS",
-            "He gets on very well with his boss.",
+            "He", "gets on very well with", "his boss.",
             "Uso del phrasal verb 'get on well with' (andare d'accordo).", 5));
 
         sentExam2.getSentenceExercises().add(makeSentence(sentExam2,
             "We couldn't afford to buy the car.", "ENOUGH",
-            "We didn't have enough money to buy the car.",
+            "We didn't", "have enough money to", "buy the car.",
             "'Afford' espresso tramite quantità sufficiente di denaro.", 6));
 
         examRepository.save(sentExam2);
@@ -381,32 +381,32 @@ public class DataInitializer implements ApplicationRunner {
 
         sentExam3.getSentenceExercises().add(makeSentence(sentExam3,
             "I regret not studying harder when I was at university.", "WISH",
-            "I wish I had studied harder when I was at university.",
+            "I", "wish I had studied harder", "when I was at university.",
             "Rimpianto sul passato: wish + past perfect (had + participio passato).", 1));
 
         sentExam3.getSentenceExercises().add(makeSentence(sentExam3,
             "She is annoyed that her colleagues are always interrupting her.", "ONLY",
-            "If only her colleagues would stop interrupting her.",
+            "If only her colleagues", "would stop interrupting", "her.",
             "'If only + would' esprime un desiderio/lamento riguardo al comportamento altrui.", 2));
 
         sentExam3.getSentenceExercises().add(makeSentence(sentExam3,
             "Because he didn't train enough, he can't run the marathon today.", "IF",
-            "If he had trained enough, he would be able to run the marathon today.",
+            "If he had trained enough, he", "would be able to run", "the marathon today.",
             "Condizionale misto: If + past perfect (passato) → would + infinito (presente).", 3));
 
         sentExam3.getSentenceExercises().add(makeSentence(sentExam3,
             "It's a pity we don't have more time to visit the museum.", "WISH",
-            "I wish we had more time to visit the museum.",
+            "I", "wish we had more time", "to visit the museum.",
             "Desiderio nel presente impossibile: wish + past simple.", 4));
 
         sentExam3.getSentenceExercises().add(makeSentence(sentExam3,
             "He was forced to resign because he had falsified the accounts.", "RESULTED",
-            "Falsifying the accounts resulted in him being forced to resign.",
+            "Falsifying the accounts", "resulted in him being forced", "to resign.",
             "'Result in' + gerundio: struttura avanzata per esprimere conseguenza.", 5));
 
         sentExam3.getSentenceExercises().add(makeSentence(sentExam3,
             "They would prefer it if you didn't mention the incident again.", "RATHER",
-            "They would rather you didn't mention the incident again.",
+            "They would", "rather you didn't mention", "the incident again.",
             "'Would rather + soggetto + past simple' esprime preferenza su azioni altrui.", 6));
 
         examRepository.save(sentExam3);
@@ -423,32 +423,32 @@ public class DataInitializer implements ApplicationRunner {
 
         sentExam4.getSentenceExercises().add(makeSentence(sentExam4,
             "Someone broke into the office and stole the computers.", "BROKEN",
-            "The office had been broken into and the computers stolen.",
+            "The office", "had been broken into and", "the computers stolen.",
             "Passivo del past perfect: had been + participio passato.", 1));
 
         sentExam4.getSentenceExercises().add(makeSentence(sentExam4,
             "A plumber will fix the boiler for us tomorrow.", "HAVING",
-            "We are having the boiler fixed by a plumber tomorrow.",
+            "We are", "having the boiler fixed by", "a plumber tomorrow.",
             "Causativo 'have something done': have + oggetto + participio passato.", 2));
 
         sentExam4.getSentenceExercises().add(makeSentence(sentExam4,
             "\"Don't forget to submit your reports by Friday,\" the manager told us.", "REMINDED",
-            "The manager reminded us to submit our reports by Friday.",
+            "The manager", "reminded us to submit our", "reports by Friday.",
             "'Remind somebody to do something': verbo di reporting + infinito.", 3));
 
         sentExam4.getSentenceExercises().add(makeSentence(sentExam4,
             "\"I didn't take the documents,\" the suspect said.", "DENIED",
-            "The suspect denied having taken the documents.",
+            "The suspect", "denied having taken the", "documents.",
             "'Deny + gerundio': verbo di reporting negativo seguito da forma in -ing.", 4));
 
         sentExam4.getSentenceExercises().add(makeSentence(sentExam4,
             "It is believed that the painting dates back to the 16th century.", "BELIEVED",
-            "The painting is believed to date back to the 16th century.",
+            "The painting", "is believed to date back", "to the 16th century.",
             "Passivo impersonale con infinito presente: is believed to + infinito.", 5));
 
         sentExam4.getSentenceExercises().add(makeSentence(sentExam4,
             "The mechanic is servicing our car right now.", "SERVICED",
-            "We are having our car serviced by the mechanic right now.",
+            "We are", "having our car serviced by", "the mechanic right now.",
             "Causativo al presente progressivo: are having + oggetto + participio passato.", 6));
 
         examRepository.save(sentExam4);
@@ -465,32 +465,32 @@ public class DataInitializer implements ApplicationRunner {
 
         sentExam5.getSentenceExercises().add(makeSentence(sentExam5,
             "We had barely sat down when the lights went out.", "HARDLY",
-            "Hardly had we sat down when the lights went out.",
+            "Hardly", "had we sat down when", "the lights went out.",
             "Inversione enfatica con 'Hardly... when': ausiliare anteposto al soggetto.", 1));
 
         sentExam5.getSentenceExercises().add(makeSentence(sentExam5,
             "Under no circumstances should you reveal the password to anyone.", "ON",
-            "On no account should you reveal the password to anyone.",
+            "On", "no account should you reveal", "the password to anyone.",
             "'On no account' è espressione enfatica formale equivalente a 'Under no circumstances'.", 2));
 
         sentExam5.getSentenceExercises().add(makeSentence(sentExam5,
             "She had never seen such a breathtaking landscape before.", "NEVER",
-            "Never before had she seen such a breathtaking landscape.",
+            "Never before", "had she seen such a", "breathtaking landscape.",
             "Inversione con 'Never before': had + soggetto + participio passato.", 3));
 
         sentExam5.getSentenceExercises().add(makeSentence(sentExam5,
             "They only realised the full scale of the disaster after the rescue teams arrived.", "NOT",
-            "Not until the rescue teams arrived did they realise the full scale of the disaster.",
+            "Not until the rescue teams arrived", "did they realise the full", "scale of the disaster.",
             "'Not until...' richiede inversione nella proposizione principale: did + soggetto + verbo.", 4));
 
         sentExam5.getSentenceExercises().add(makeSentence(sentExam5,
             "It was such a boring lecture that half the students fell asleep.", "SO",
-            "The lecture was so boring that half the students fell asleep.",
+            "The lecture", "was so boring that half", "the students fell asleep.",
             "Struttura 'so + aggettivo + that': trasformazione da 'such a + sostantivo'.", 5));
 
         sentExam5.getSentenceExercises().add(makeSentence(sentExam5,
             "He not only forgot his passport but also missed the flight.", "WHAT",
-            "What he did was forget his passport and miss the flight.",
+            "What", "he did was forget his", "passport and miss the flight.",
             "Cleft sentence con 'What... did was + infinito': struttura enfatica avanzata.", 6));
 
         examRepository.save(sentExam5);
@@ -507,35 +507,36 @@ public class DataInitializer implements ApplicationRunner {
 
         sentExam6.getSentenceExercises().add(makeSentence(sentExam6,
             "Despite being exhausted, she continued working until midnight.", "EVEN",
-            "Even though she was exhausted, she continued working until midnight.",
+            "Even", "though she was exhausted she", "continued working until midnight.",
             "'Even though' introduce una concessione con soggetto esplicito, equivale a 'despite the fact that'.", 1));
 
         sentExam6.getSentenceExercises().add(makeSentence(sentExam6,
             "I can't concentrate because the music is so loud.", "PREVENTS",
-            "The loud music prevents me from concentrating.",
+            "The loud music", "prevents me from concentrating", ".",
             "'Prevent somebody from doing something': struttura causativa negativa.", 2));
 
         sentExam6.getSentenceExercises().add(makeSentence(sentExam6,
             "He managed to solve the problem after thinking about it for a long time.", "CAME",
-            "He came up with a solution after thinking about it for a long time.",
+            "He", "came up with a solution", "after thinking about it for a long time.",
             "Phrasal verb 'come up with' = trovare/elaborare un'idea o soluzione.", 3));
 
         sentExam6.getSentenceExercises().add(makeSentence(sentExam6,
             "You are not allowed to use your phone during the examination.", "MUST",
-            "You must not use your phone during the examination.",
+            "You", "must not use your phone", "during the examination.",
             "'Must not' esprime divieto assoluto; equivalente formale a 'not allowed to'.", 4));
 
         sentExam6.getSentenceExercises().add(makeSentence(sentExam6,
             "It was not necessary for them to rewrite the entire proposal.", "NEED",
-            "They needn't have rewritten the entire proposal.",
+            "They", "needn't have rewritten the", "entire proposal.",
             "'Needn't have + past participle' indica che un'azione passata non era necessaria ma è stata fatta.", 5));
 
         sentExam6.getSentenceExercises().add(makeSentence(sentExam6,
             "The treasurer is responsible for managing the club's finances.", "CHARGE",
-            "The treasurer is in charge of managing the club's finances.",
+            "The treasurer is", "in charge of managing the", "club's finances.",
             "'Be in charge of + gerundio' equivale a 'be responsible for + gerundio'.", 6));
 
         examRepository.save(sentExam6);
+
         // =========================================================================
         // ── EXAM 13: Word Transformation – Set 7 (Focus: Sostantivi da Verbi Irregolari)
         // =========================================================================
@@ -723,32 +724,32 @@ public class DataInitializer implements ApplicationRunner {
 
         sentExam7.getSentenceExercises().add(makeSentence(sentExam7,
             "I'm sure it was Tom who sent that anonymous email.", "MUST",
-            "It must have been Tom who sent that anonymous email.",
+            "It", "must have been Tom who sent", "that anonymous email.",
             "Deduzione logica sul passato: must have + participio passato.", 1));
 
         sentExam7.getSentenceExercises().add(makeSentence(sentExam7,
             "It was wrong of you to leave without saying goodbye.", "SHOULD",
-            "You should not have left without saying goodbye.",
+            "You", "should not have left without", "saying goodbye.",
             "Critica su azione passata: should not have + participio passato.", 2));
 
         sentExam7.getSentenceExercises().add(makeSentence(sentExam7,
             "I don't think she understood the gravity of the situation.", "CANNOT",
-            "She cannot have understood the gravity of the situation.",
+            "She", "cannot have understood the gravity", "of the situation.",
             "Deduzione negativa sul passato: cannot have + participio passato.", 3));
 
         sentExam7.getSentenceExercises().add(makeSentence(sentExam7,
             "Perhaps he took the wrong turn at the roundabout.", "COULD",
-            "He could have taken the wrong turn at the roundabout.",
+            "He", "could have taken the wrong", "turn at the roundabout.",
             "Possibilità passata: could have + participio passato.", 4));
 
         sentExam7.getSentenceExercises().add(makeSentence(sentExam7,
             "It wasn't necessary for her to wait, but she did.", "NEED",
-            "She needn't have waited.",
+            "She", "needn't have waited", ".",
             "'Needn't have + participio passato': azione passata inutile ma comunque compiuta.", 5));
 
         sentExam7.getSentenceExercises().add(makeSentence(sentExam7,
             "I'm certain they didn't receive the invoice in time.", "CANNOT",
-            "They cannot have received the invoice in time.",
+            "They", "cannot have received the invoice", "in time.",
             "Certezza negativa nel passato: cannot have + participio passato.", 6));
 
         examRepository.save(sentExam7);
@@ -765,32 +766,32 @@ public class DataInitializer implements ApplicationRunner {
 
         sentExam8.getSentenceExercises().add(makeSentence(sentExam8,
             "He regrets not attending the conference.", "WISHES",
-            "He wishes he had attended the conference.",
+            "He", "wishes he had attended the", "conference.",
             "Rimpianto passato: wish + past perfect (had + participio passato).", 1));
 
         sentExam8.getSentenceExercises().add(makeSentence(sentExam8,
             "It was pointless to argue with the committee.", "WORTH",
-            "It was not worth arguing with the committee.",
+            "It was not", "worth arguing with the", "committee.",
             "'Worth + gerundio': struttura impersonale per esprimere utilità/inutilità.", 2));
 
         sentExam8.getSentenceExercises().add(makeSentence(sentExam8,
             "She is always the last person to leave the office.", "NEVER",
-            "She never leaves the office before everyone else.",
+            "She", "never leaves the office before", "everyone else.",
             "Riformulazione di 'last to do': uso di 'never... before' con comparativo.", 3));
 
         sentExam8.getSentenceExercises().add(makeSentence(sentExam8,
             "He admitted that he had stolen the money from the safe.", "ADMITTED",
-            "He admitted to having stolen the money from the safe.",
+            "He", "admitted to having stolen the", "money from the safe.",
             "'Admit to + gerundio perfetto (having + participio)': forma corretta dopo questo verbo.", 4));
 
         sentExam8.getSentenceExercises().add(makeSentence(sentExam8,
             "They expect us to submit the final draft by next Monday.", "SUPPOSED",
-            "We are supposed to submit the final draft by next Monday.",
+            "We are", "supposed to submit the final", "draft by next Monday.",
             "'Be supposed to + infinito': obbligo/aspettativa esterna.", 5));
 
         sentExam8.getSentenceExercises().add(makeSentence(sentExam8,
             "There is no point in submitting the application after the deadline.", "USE",
-            "It is no use submitting the application after the deadline.",
+            "It is no", "use submitting the application after", "the deadline.",
             "'It is no use + gerundio': struttura idiomatica per esprimere inutilità.", 6));
 
         examRepository.save(sentExam8);
@@ -807,32 +808,32 @@ public class DataInitializer implements ApplicationRunner {
 
         sentExam9.getSentenceExercises().add(makeSentence(sentExam9,
             "I have never eaten such a delicious meal in my life.", "BEST",
-            "It is the best meal I have ever eaten in my life.",
+            "It is the", "best meal I have ever", "eaten in my life.",
             "Superlativo assoluto con present perfect: 'the best... I have ever + participio'.", 1));
 
         sentExam9.getSentenceExercises().add(makeSentence(sentExam9,
             "As the weeks passed, the situation grew worse and worse.", "WORSE",
-            "The situation kept getting worse as the weeks passed.",
+            "The situation", "kept getting worse as the", "weeks passed.",
             "'Keep + gerundio' esprime un'azione continua e progressiva.", 2));
 
         sentExam9.getSentenceExercises().add(makeSentence(sentExam9,
             "The more you practise, the better your results will be.", "DIRECT",
-            "There is a direct link between how much you practise and how good your results are.",
+            "There is a", "direct link between how much", "you practise and how good your results are.",
             "Riformulazione della struttura 'the more... the more' con nesso causale esplicito.", 3));
 
         sentExam9.getSentenceExercises().add(makeSentence(sentExam9,
             "Nothing could be more absurd than his explanation.", "MOST",
-            "His explanation was the most absurd thing imaginable.",
+            "His explanation was the", "most absurd thing imaginable", ".",
             "Superlativo assoluto rafforzato: 'the most + adjective + thing imaginable'.", 4));
 
         sentExam9.getSentenceExercises().add(makeSentence(sentExam9,
             "She is not as experienced as her colleague.", "LESS",
-            "She is less experienced than her colleague.",
+            "She is", "less experienced than her", "colleague.",
             "Comparativo di minoranza: less + aggettivo + than.", 5));
 
         sentExam9.getSentenceExercises().add(makeSentence(sentExam9,
             "No other city in the country is as polluted as this one.", "MOST",
-            "This is the most polluted city in the country.",
+            "This is the", "most polluted city in the", "country.",
             "Conversione da comparativo assoluto a superlativo relativo.", 6));
 
         examRepository.save(sentExam9);
@@ -849,38 +850,38 @@ public class DataInitializer implements ApplicationRunner {
 
         sentExam10.getSentenceExercises().add(makeSentence(sentExam10,
             "Although the film received poor reviews, it was a box-office success.", "DESPITE",
-            "Despite receiving poor reviews, the film was a box-office success.",
+            "Despite", "receiving poor reviews the film", "was a box-office success.",
             "'Despite + gerundio': preposizione di concessione senza soggetto nella subordinata.", 1));
 
         sentExam10.getSentenceExercises().add(makeSentence(sentExam10,
             "He is very talented, but he tends to be rather arrogant.", "WHILE",
-            "While he is very talented, he tends to be rather arrogant.",
-            "'While' introduce una concessione con contrasto diretto tra due proposizioni.", 2));
+            "While", "he is very talented he", "tends to be rather arrogant.",
+            "'While' introduce una concessione con contrasto directo tra due proposizioni.", 2));
 
         sentExam10.getSentenceExercises().add(makeSentence(sentExam10,
             "The company continued to expand in spite of the economic downturn.", "THOUGH",
-            "Even though there was an economic downturn, the company continued to expand.",
+            "Even though there", "was an economic downturn the", "company continued to expand.",
             "'Even though + soggetto + verbo': equivalente di 'in spite of the fact that'.", 3));
 
         sentExam10.getSentenceExercises().add(makeSentence(sentExam10,
             "She passed the exam. However, she did not celebrate.", "YET",
-            "She passed the exam, yet she did not celebrate.",
+            "She passed the exam,", "yet she did not celebrate", ".",
             "'Yet' come congiunzione avversativa formale, equivalente a 'but' con valore di sorpresa.", 4));
 
         sentExam10.getSentenceExercises().add(makeSentence(sentExam10,
             "Regardless of his qualifications, he was not offered the position.", "MATTER",
-            "No matter what his qualifications were, he was not offered the position.",
+            "No matter", "what his qualifications were he", "was not offered the position.",
             "'No matter what/how' introduce una concessione universale, equivalente a 'regardless of'.", 5));
 
         sentExam10.getSentenceExercises().add(makeSentence(sentExam10,
             "The weather was terrible, but they still managed to complete the hike.", "SPITE",
-            "In spite of the terrible weather, they still managed to complete the hike.",
+            "In spite of", "the terrible weather they still", "managed to complete the hike.",
             "'In spite of + noun phrase': preposizione concessiva formale.", 6));
 
         examRepository.save(sentExam10);
 
         // =========================================================================
-        // ── EXAM 5: Word Transformation – Set 3 (Focus: Advanced C1 Vocabulary & Collocations)
+        // ── EXAM 5 [BIS]: Word Transformation – Set 3 (Focus: Advanced C1 Vocabulary & Collocations)
         // =========================================================================
         Exam wordExam991 = new Exam();
         wordExam991.setTitle("Word Transformation – Set 3 (Advanced C1 Vocabulary)");
@@ -924,7 +925,7 @@ public class DataInitializer implements ApplicationRunner {
 
 
         // =========================================================================
-        // ── EXAM 6: Sentence Transformation – Set 3 (Focus: Advanced C1 Structures & Expressions)
+        // ── EXAM 6 [BIS]: Sentence Transformation – Set 3 (Focus: Advanced C1 Structures & Expressions)
         // =========================================================================
         Exam sentExam991 = new Exam();
         sentExam991.setTitle("Sentence Transformation – Set 3 (Advanced C1 Structures)");
@@ -934,32 +935,32 @@ public class DataInitializer implements ApplicationRunner {
 
         sentExam991.getSentenceExercises().add(makeSentence(sentExam991,
             "I regret not telling her the truth earlier.", "WISH",
-            "I wish I had told her the truth earlier.",
+            "I", "wish I had told her", "the truth earlier.",
             "Rimpianto nel passato: wish + past perfect.", 1));
 
         sentExam991.getSentenceExercises().add(makeSentence(sentExam991,
             "It wasn't necessary for them to bring any food.", "NEED",
-            "They didn't need to bring any food.",
+            "They", "didn't need to bring", "any food.",
             "Assenza di necessità: didn't need to + verbo base.", 2));
 
         sentExam991.getSentenceExercises().add(makeSentence(sentExam991,
             "You can borrow my laptop whenever you need it.", "DISPOSAL",
-            "I can put my laptop at your disposal whenever you need it.",
+            "I can put my laptop", "at your disposal whenever you", "need it.",
             "Espressione formale: put something at someone's disposal.", 3));
 
         sentExam991.getSentenceExercises().add(makeSentence(sentExam991,
             "The last time I went to Paris was five years ago.", "BEEN",
-            "I haven't been to Paris for five years.",
+            "I", "haven't been to Paris for", "five years.",
             "Present Perfect con 'for' per indicare durata temporale.", 4));
 
         sentExam991.getSentenceExercises().add(makeSentence(sentExam991,
             "She started working here immediately after graduating.", "SOONER",
-            "No sooner had she graduated than she started working here.",
+            "No sooner", "had she graduated than she", "started working here.",
             "Inversione avanzata con 'No sooner... than'.", 5));
 
         sentExam991.getSentenceExercises().add(makeSentence(sentExam991,
             "People believe that the painting was stolen during the war.", "THOUGHT",
-            "The painting is thought to have been stolen during the war.",
+            "The painting is", "thought to have been stolen", "during the war.",
             "Passive reporting structure: is thought to have been + past participle.", 6));
 
         examRepository.save(sentExam991);
@@ -1151,32 +1152,32 @@ public class DataInitializer implements ApplicationRunner {
 
         sentExam11.getSentenceExercises().add(makeSentence(sentExam11,
             "People consider her to be the finest soprano of her generation.", "CONSIDERED",
-            "She is considered to be the finest soprano of her generation.",
+            "She", "is considered to be the finest soprano", "of her generation.",
             "Passivo impersonale: is/are considered + to be + complemento.", 1));
 
         sentExam11.getSentenceExercises().add(makeSentence(sentExam11,
             "Experts believe that the ruins date back to the Bronze Age.", "BELIEVED",
-            "The ruins are believed to date back to the Bronze Age.",
+            "The ruins", "are believed to date back to", "the Bronze Age.",
             "Passivo impersonale con infinito presente: are believed + to + infinito.", 2));
 
         sentExam11.getSentenceExercises().add(makeSentence(sentExam11,
             "It is reported that the suspect fled the country last night.", "REPORTED",
-            "The suspect is reported to have fled the country last night.",
+            "The suspect", "is reported to have fled the country", "last night.",
             "Passivo impersonale con infinito perfetto: is reported + to have + participio.", 3));
 
         sentExam11.getSentenceExercises().add(makeSentence(sentExam11,
             "They say that the new treatment has shown remarkable results.", "SAID",
-            "The new treatment is said to have shown remarkable results.",
+            "The new treatment", "is said to have shown remarkable", "results.",
             "Passivo impersonale al presente: is said + to have + participio passato.", 4));
 
         sentExam11.getSentenceExercises().add(makeSentence(sentExam11,
             "People know that he made his fortune through property investment.", "KNOWN",
-            "He is known to have made his fortune through property investment.",
+            "He", "is known to have made his fortune", "through property investment.",
             "Passivo di 'know': is known + to have + participio passato.", 5));
 
         sentExam11.getSentenceExercises().add(makeSentence(sentExam11,
             "Witnesses claim that the vehicle was travelling at excessive speed.", "CLAIMED",
-            "The vehicle is claimed to have been travelling at excessive speed.",
+            "The vehicle", "is claimed to have been travelling at", "excessive speed.",
             "Passivo con infinito progressivo perfetto: is claimed + to have been + gerundio.", 6));
 
         examRepository.save(sentExam11);
@@ -1193,32 +1194,32 @@ public class DataInitializer implements ApplicationRunner {
 
         sentExam12.getSentenceExercises().add(makeSentence(sentExam12,
             "The lack of communication caused all the problems.", "WHAT",
-            "What caused all the problems was the lack of communication.",
+            "What caused all the problems", "was the lack of communication", ".",
             "Cleft sentence con 'What': What + soggetto + verbo + was + focus.", 1));
 
         sentExam12.getSentenceExercises().add(makeSentence(sentExam12,
             "She only started feeling better after she changed her diet.", "IT",
-            "It was only after she changed her diet that she started feeling better.",
+            "It was only after she changed her diet", "that she started feeling better", ".",
             "Cleft sentence con 'It was... that': struttura enfatica per isolare l'elemento chiave.", 2));
 
         sentExam12.getSentenceExercises().add(makeSentence(sentExam12,
             "Nobody expected him to win the championship.", "LAST",
-            "He was the last person anyone expected to win the championship.",
+            "He was", "the last person anyone expected to", "win the championship.",
             "'The last person... to do': struttura enfatica per esprimere totale improbabilità.", 3));
 
         sentExam12.getSentenceExercises().add(makeSentence(sentExam12,
             "His dedication impressed me most.", "THING",
-            "The thing that impressed me most was his dedication.",
+            "The thing that impressed me most", "was his dedication", ".",
             "Cleft sentence con 'The thing that': struttura enfatica con soggetto nominalizzato.", 4));
 
         sentExam12.getSentenceExercises().add(makeSentence(sentExam12,
             "I really want you to listen to me carefully.", "ALL",
-            "All I want is for you to listen to me carefully.",
+            "All I want is", "for you to listen to me", "carefully.",
             "'All I want is for + soggetto + infinito': struttura enfatica con 'all' come soggetto.", 5));
 
         sentExam12.getSentenceExercises().add(makeSentence(sentExam12,
             "The director alone had the authority to approve the budget.", "ONLY",
-            "It was only the director who had the authority to approve the budget.",
+            "It was only the director", "who had the authority to approve", "the budget.",
             "Cleft sentence con 'It was only... who': enfasi sull'unicità del soggetto.", 6));
 
         examRepository.save(sentExam12);
@@ -1235,32 +1236,32 @@ public class DataInitializer implements ApplicationRunner {
 
         sentExam13.getSentenceExercises().add(makeSentence(sentExam13,
             "He agreed to the proposal because he wanted to avoid a conflict.", "ORDER",
-            "He agreed to the proposal in order to avoid a conflict.",
+            "He agreed to the proposal", "in order to avoid", "a conflict.",
             "'In order to + infinito': preposizione complessa di scopo, più formale di 'to' semplice.", 1));
 
         sentExam13.getSentenceExercises().add(makeSentence(sentExam13,
             "The festival was cancelled because of the severe weather conditions.", "OWING",
-            "The festival was cancelled owing to the severe weather conditions.",
+            "The festival was cancelled", "owing to the severe weather", "conditions.",
             "'Owing to + noun phrase': preposizione formale di causa, equivalente a 'because of'.", 2));
 
         sentExam13.getSentenceExercises().add(makeSentence(sentExam13,
             "She completed the project successfully with the help of her team.", "AID",
-            "She completed the project successfully with the aid of her team.",
+            "She completed the project successfully", "with the aid of her", "team.",
             "'With the aid of': espressione preposizionale formale equivalente a 'with the help of'.", 3));
 
         sentExam13.getSentenceExercises().add(makeSentence(sentExam13,
             "The new policy applies to all employees without any exceptions.", "REGARDLESS",
-            "The new policy applies to all employees regardless of any exceptions.",
+            "The new policy applies to all employees", "regardless of any", "exceptions.",
             "'Regardless of': preposizione formale che indica assenza di condizioni.", 4));
 
         sentExam13.getSentenceExercises().add(makeSentence(sentExam13,
             "He was promoted as a reward for his outstanding performance.", "VIRTUE",
-            "He was promoted by virtue of his outstanding performance.",
+            "He was promoted", "by virtue of his outstanding", "performance.",
             "'By virtue of': preposizione formale che indica causa meritoria.", 5));
 
         sentExam13.getSentenceExercises().add(makeSentence(sentExam13,
             "They decided to postpone the launch until market conditions improve.", "PENDING",
-            "They decided to postpone the launch pending an improvement in market conditions.",
+            "They decided to postpone the launch", "pending an improvement in market", "conditions.",
             "'Pending + noun': preposizione formale che indica attesa di una condizione futura.", 6));
 
         examRepository.save(sentExam13);
@@ -1277,32 +1278,32 @@ public class DataInitializer implements ApplicationRunner {
 
         sentExam14.getSentenceExercises().add(makeSentence(sentExam14,
             "If you should need any further assistance, please contact us.", "SHOULD",
-            "Should you need any further assistance, please contact us.",
+            "Should", "you need any further assistance please", "contact us.",
             "Condizionale formale invertito con 'Should': omissione di 'if' + inversione soggetto/ausiliare.", 1));
 
         sentExam14.getSentenceExercises().add(makeSentence(sentExam14,
             "If I had known about the meeting, I would have attended.", "HAD",
-            "Had I known about the meeting, I would have attended.",
+            "Had", "I known about the meeting I", "would have attended.",
             "Condizionale III invertito: omissione di 'if' + had + soggetto + participio passato.", 2));
 
         sentExam14.getSentenceExercises().add(makeSentence(sentExam14,
             "If it were not for the financial support, the project would fail.", "WERE",
-            "Were it not for the financial support, the project would fail.",
+            "Were", "it not for the financial support", "the project would fail.",
             "Condizionale II invertito con 'Were': omissione di 'if' + were + soggetto.", 3));
 
         sentExam14.getSentenceExercises().add(makeSentence(sentExam14,
             "If the deadline is not met, the contract will be cancelled.", "UNLESS",
-            "Unless the deadline is met, the contract will be cancelled.",
+            "Unless", "the deadline is met the", "contract will be cancelled.",
             "'Unless' sostituisce 'if not': la condizione diventa affermativa nella subordinata.", 4));
 
         sentExam14.getSentenceExercises().add(makeSentence(sentExam14,
             "If you hadn't reminded me, I would have completely forgotten.", "BUT",
-            "But for your reminder, I would have completely forgotten.",
+            "But", "for your reminder I would have", "completely forgotten.",
             "'But for + noun': struttura formale equivalente a 'if it hadn't been for'.", 5));
 
         sentExam14.getSentenceExercises().add(makeSentence(sentExam14,
             "Provided that all parties agree, the deal will be finalised tomorrow.", "LONG",
-            "As long as all parties agree, the deal will be finalised tomorrow.",
+            "As", "long as all parties agree the", "deal will be finalised tomorrow.",
             "'As long as': connettivo condizionale equivalente a 'provided that'.", 6));
 
         examRepository.save(sentExam14);
@@ -1319,32 +1320,32 @@ public class DataInitializer implements ApplicationRunner {
 
         sentExam15.getSentenceExercises().add(makeSentence(sentExam15,
             "\"You really should see a doctor,\" she told him.", "URGED",
-            "She urged him to see a doctor.",
+            "She", "urged him to see a", "doctor.",
             "'Urge somebody to do something': verbo di reporting che esprime forte raccomandazione.", 1));
 
         sentExam15.getSentenceExercises().add(makeSentence(sentExam15,
             "\"I will look into the matter immediately,\" the director promised.", "UNDERTOOK",
-            "The director undertook to look into the matter immediately.",
+            "The director", "undertook to look into the", "matter immediately.",
             "'Undertake to do something': verbo formale di reporting che esprime impegno solenne.", 2));
 
         sentExam15.getSentenceExercises().add(makeSentence(sentExam15,
             "\"Why don't you apply for the scholarship?\" her tutor suggested.", "ENCOURAGED",
-            "Her tutor encouraged her to apply for the scholarship.",
+            "Her tutor", "encouraged her to apply for", "the scholarship.",
             "'Encourage somebody to do something': verbo di reporting per suggerimento positivo.", 3));
 
         sentExam15.getSentenceExercises().add(makeSentence(sentExam15,
             "\"It was me who leaked the information,\" he confessed.", "CONFESSED",
-            "He confessed to having leaked the information.",
+            "He", "confessed to having leaked the", "information.",
             "'Confess to + gerundio perfetto': verbo di reporting + to + having + participio.", 4));
 
         sentExam15.getSentenceExercises().add(makeSentence(sentExam15,
             "\"I'm sorry I missed the deadline,\" she said.", "APOLOGISED",
-            "She apologised for having missed the deadline.",
+            "She", "apologised for having missed the", "deadline.",
             "'Apologise for + gerundio perfetto': struttura di reporting per scuse su azione passata.", 5));
 
         sentExam15.getSentenceExercises().add(makeSentence(sentExam15,
             "\"Don't touch any of the equipment,\" the technician warned us.", "WARNED",
-            "The technician warned us not to touch any of the equipment.",
+            "The technician", "warned us not to touch", "any of the equipment.",
             "'Warn somebody not to do something': infinito negativo nel discorso indiretto.", 6));
 
         examRepository.save(sentExam15);
@@ -1361,38 +1362,38 @@ public class DataInitializer implements ApplicationRunner {
 
         sentExam16.getSentenceExercises().add(makeSentence(sentExam16,
             "The government decided to increase taxes on luxury goods.", "DECISION",
-            "The government made a decision to increase taxes on luxury goods.",
+            "The government", "made a decision to increase", "taxes on luxury goods.",
             "Nominalizzazione del verbo 'decide': 'make a decision to + infinito'.", 1));
 
         sentExam16.getSentenceExercises().add(makeSentence(sentExam16,
             "They agreed to extend the contract for another two years.", "REACHED",
-            "They reached an agreement to extend the contract for another two years.",
+            "They", "reached an agreement to extend", "the contract for another two years.",
             "Nominalizzazione di 'agree': 'reach an agreement to + infinito'.", 2));
 
         sentExam16.getSentenceExercises().add(makeSentence(sentExam16,
             "The board will discuss the merger at next week's meeting.", "DISCUSSION",
-            "The merger will come up for discussion at next week's board meeting.",
+            "The merger will", "come up for discussion at", "next week's board meeting.",
             "'Come up for discussion': struttura nominale formale equivalente a 'be discussed'.", 3));
 
         sentExam16.getSentenceExercises().add(makeSentence(sentExam16,
             "Researchers have suggested that sleep deprivation affects memory.", "SUGGESTION",
-            "There has been a suggestion that sleep deprivation affects memory.",
+            "There has", "been a suggestion that sleep", "deprivation affects memory.",
             "Nominalizzazione con struttura esistenziale: 'There has been a suggestion that'.", 4));
 
         sentExam16.getSentenceExercises().add(makeSentence(sentExam16,
             "She assumed that the report had already been submitted.", "ASSUMPTION",
-            "She was under the assumption that the report had already been submitted.",
+            "She was", "under the assumption that the", "report had already been submitted.",
             "'Be under the assumption that': struttura nominale formale equivalente a 'assume that'.", 5));
 
         sentExam16.getSentenceExercises().add(makeSentence(sentExam16,
             "He failed to disclose his financial interests before the vote.", "FAILURE",
-            "His failure to disclose his financial interests before the vote was criticised.",
+            "His", "failure to disclose his financial", "interests before the vote was criticised.",
             "Nominalizzazione con 'failure to + infinito': struttura formale tipica del registro scritto C1.", 6));
 
         examRepository.save(sentExam16);
     }
 
-    // Metodi helper aggiornati (senza il campo 'source' rimosso dai modelli dei singoli quesiti)
+    // Metodo helper WordTransformation invariato
     private WordTransformation makeWord(Exam exam, String sentence,
                                         String baseWord, String solution,
                                         String explanation, int orderIndex) {
@@ -1406,14 +1407,18 @@ public class DataInitializer implements ApplicationRunner {
         return w;
     }
 
+    // Metodo helper SentenceTransformation con i 3 segmenti per il layout inline
     private SentenceTransformation makeSentence(Exam exam, String originalSentence,
-                                                 String keyWord, String solution,
+                                                 String keyWord, String sentenceStart, 
+                                                 String solution, String sentenceEnd,
                                                  String explanation, int orderIndex) {
         SentenceTransformation s = new SentenceTransformation();
         s.setExam(exam);
         s.setOriginalSentence(originalSentence);
         s.setKeyWord(keyWord);
-        s.setSolution(solution);
+        s.setSentenceStart(sentenceStart);
+        s.setSolution(solution); 
+        s.setSentenceEnd(sentenceEnd);
         s.setExplanation(explanation);
         s.setOrderIndex(orderIndex);
         return s;

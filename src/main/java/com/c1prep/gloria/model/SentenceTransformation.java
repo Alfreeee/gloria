@@ -21,5 +21,7 @@ public class SentenceTransformation {
     private String keyWord;           
     private String solution;          
     private String explanation; // Ottimo per il livello C1
+    private String sentenceStart; // Es: "She didn't"
+    private String sentenceEnd;
     private int orderIndex;
 }

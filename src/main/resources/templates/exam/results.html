@@ -76,14 +76,14 @@
                 <p class="full-sentence-preview">
                     <span th:text="${exStat.index + 1} + '. '">1.</span>
                     <span th:text="${ex.sentence.split('_{5}', -1)[0]}"></span>
-                    <span th:class="${isCorrect} ? 'user-correct-inline' : 'user-wrong-inline'" 
-                          th:text="${userAns != null && userAns != '' ? userAns : 'nessuna rispsota'}"></span>
+                    <span th:class="${isCorrect ? 'user-correct-inline' : 'user-wrong-inline'}" 
+                          th:text="${userAns != null && userAns != '' ? userAns : 'nessuna risposta'}"></span>
                     <span th:text="${ex.sentence.split('_{5}', -1)[1]}"></span>
                 </p>
                 
-                <div class="meta-details" th:classappend="${isCorrect} ? 'border-correct' : 'border-wrong'">
-                    <div class="status-indicator" th:classappend="${isCorrect} ? 'status-correct' : 'status-wrong'">
-                        <span th:text="${isCorrect} ? '✓ Corretto' : '× Errato'"></span>
+                <div class="meta-details" th:classappend="${isCorrect ? 'border-correct' : 'border-wrong'}">
+                    <div class="status-indicator" th:classappend="${isCorrect ? 'status-correct' : 'status-wrong'}">
+                        <span th:text="${isCorrect ? '✓ Corretto' : '× Errato'}"></span>
                         <span style="color: #64748b; font-weight: 400;" th:text="'— Parola base: (' + ${ex.baseWord} + ')'"></span>
                     </div>
                     <div th:if="${!isCorrect}" style="color: #475569; font-size: 0.95rem;">
@@ -103,20 +103,30 @@
                     <span th:text="${exStat.index + 1} + '.'">1.</span> Frase originale: <span th:text="${ex.originalSentence}" style="color: #0f172a; font-style: italic;"></span>
                 </div>
                 
-                <p class="full-sentence-preview" style="margin-top: 4px; padding-left: 15px;">
+                <p class="full-sentence-preview" style="margin-top: 6px; padding-left: 15px; font-size: 1.05rem; color: #334155;">
                     ➔ Riscrittura: 
-                    <span th:class="${isCorrect} ? 'user-correct-inline' : 'user-wrong-inline'"
-                          th:text="${userAns != null && userAns != '' ? userAns : '[Nessun testo inserito]'}"></span>
+                    <span th:text="${ex.sentenceStart}"></span> 
+                    
+                    <strong th:classappend="${isCorrect ? 'user-correct-inline' : 'user-wrong-inline'}"
+                        th:text="${userAns != null && userAns != '' ? userAns : ' [- - - -] '}"
+                        style="padding: 0 4px;"></strong>
+                    
+                    <span th:text="${ex.sentenceEnd}"></span>
                 </p>
                 
-                <div class="meta-details" th:classappend="${isCorrect} ? 'border-correct' : 'border-wrong'">
-                    <div class="status-indicator" th:classappend="${isCorrect} ? 'status-correct' : 'status-wrong'">
-                        <span th:text="${isCorrect} ? '✓ Corretto' : '× Errato'"></span>
+                <div class="meta-details" th:classappend="${isCorrect ? 'border-correct' : 'border-wrong'}">
+                    <div class="status-indicator" th:classappend="${isCorrect ? 'status-correct' : 'status-wrong'}">
+                        <span th:text="${isCorrect ? '✓ Corretto' : '× Errato'}"></span>
                         <span style="color: #64748b; font-weight: 400;" th:text="'— Parola chiave obbligatoria: [' + ${ex.keyWord} + ']'"></span>
                     </div>
-                    <div th:if="${!isCorrect}" style="color: #475569; font-size: 0.95rem;">
-                        Soluzione ufficiale: <strong style="color: #16a34a;" th:text="${ex.solution}"></strong>
+                    
+                    <div th:if="${!isCorrect}" style="color: #475569; font-size: 0.95rem; margin-top: 5px;">
+                        Soluzione ufficiale: 
+                        <span th:text="${ex.sentenceStart}"></span>
+                        <strong style="color: #16a34a; padding: 0 2px;" th:text="${ex.solution}"></strong>
+                        <span th:text="${ex.sentenceEnd}"></span>
                     </div>
+                    
                     <button type="button" class="btn-explain" th:onclick="'loadExplanation(' + ${ex.id} + ', \'SENTENCE\')'">Vedi Regola</button>
                     <div th:id="'exp-SENTENCE-' + ${ex.id}" class="explanation-box"></div>
                 </div>

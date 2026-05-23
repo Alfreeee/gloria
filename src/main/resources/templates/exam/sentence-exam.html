@@ -30,15 +30,23 @@
                     </div>
                     
                     <div style="padding-left: 40px;">
-                        <span class="key-word-display" th:text="${ex.keyWord}">KEYWORD</span>
+                        <span class="key-word-display" th:text="${ex.keyWord}" style="font-weight: bold; color: #2c3e50; letter-spacing: 1px;">KEYWORD</span>
                     </div>
 
-                    <div class="input-group" style="padding-left: 40px; max-width: 100%;">
-                        <input type="text" 
-                               th:field="*{responses[__${ex.id}__]}" 
-                               class="form-control" 
-                               placeholder="Completa la frase usando da 3 a 6 parole..." 
-                               autocomplete="off" />
+                    <div class="transformation-row" style="padding-left: 40px; display: flex; align-items: center; gap: 8px; width: 100%; flex-wrap: wrap; font-size: 1.1rem;">
+                        
+                        <span th:text="${ex.sentenceStart}" style="color: #2c3e50; font-weight: 500;">Inizio...</span>
+
+                        <div style="flex-grow: 1; min-width: 200px; max-width: 450px;">
+                            <input type="text" 
+                                th:field="*{responses[__${ex.id}__]}" 
+                                class="form-control" 
+                                placeholder="Scrivi da 3 a 6 parole..." 
+                                autocomplete="off"
+                                style="width: 100%; border-bottom: 2px dashed #3498db; border-top: none; border-left: none; border-right: none; border-radius: 0; padding: 3px 5px; background: transparent; font-family: inherit; font-size: 1.1rem; color: #2980b9;" />
+                        </div>
+
+                        <span th:text="${ex.sentenceEnd}" style="color: #2c3e50; font-weight: 500;">...Fine.</span>
                     </div>
 
                 </div>
