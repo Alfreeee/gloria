@@ -40,7 +40,7 @@
             <h2 th:if="${isArchive}" style="color: #64748b; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.5px;">Revisione Archivio Esame 📋</h2>
 
             <th:block th:if="${!isArchive}">
-                <h2 th:if="${percent >= 60.0}" style="color: #16a34a; font-size: 2rem; font-weight: 800;">Ottimo lavoro, Gloria! Superato! 🎉</h2>
+                <h2 th:if="${percent >= 60.0}" style="color: #16a34a; font-size: 2rem; font-weight: 800;">Brava Fidanzati'! Superato! 🎉</h2>
                 <h2 th:if="${percent < 60.0}" style="color: #dc2626; font-size: 2rem; font-weight: 800;">Pippa! Bisogna studiare di più! 🙈</h2>
             </th:block>
             
