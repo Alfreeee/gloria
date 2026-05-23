@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esami Svolti | Gloria C1 Prep</title>
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/exam.css}">
+    <style>
+        .page-title { color: var(--primary-color); margin-bottom: 10px; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; }
+        .page-subtitle { color: #64748b; margin-bottom: 35px; font-size: 1.1rem; }
+        .history-list { display: flex; flex-direction: column; gap: 16px; margin-top: 20px; }
+        .history-card { background: var(--card-bg); border: 1px solid #e2e8f0; border-radius: 14px; padding: 22px 28px; display: flex; justify-content: space-between; align-items: center; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); text-decoration: none; color: inherit; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02); }
+        .history-card:hover { transform: translateY(-3px); box-shadow: 0 12px 20px -8px rgba(30, 58, 138, 0.08); border-color: #cbd5e1; }
+        .exam-info { display: flex; flex-direction: column; gap: 8px; }
+        .exam-title-group { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .exam-title-text { font-size: 1.25rem; font-weight: 700; color: var(--primary-color); }
+        .exam-time { font-size: 0.9rem; color: #94a3b8; font-weight: 500; }
+
+        .badge-type { font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .badge-word { background-color: #eff6ff; color: var(--secondary-color); border: 1px solid #bfdbfe; }
+        .badge-sentence { background-color: #ecfdf5; color: var(--accent-color-hover); border: 1px solid #a7f3d0; }
+
+        /* STRUTTURA DESTRA AGGIORNATA PER OSPITARE LA X */
+        .exam-stats { display: flex; align-items: center; gap: 24px; min-width: 360px; justify-content: flex-end; }
+        .score-container { text-align: right; min-width: 60px; }
+        .score-display { font-size: 1.35rem; font-weight: 800; color: var(--text-color); }
+        .score-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; font-weight: 700; display: block; margin-top: -2px; }
+        
+        .percentage-badge { font-weight: 700; padding: 8px 14px; border-radius: 8px; font-size: 0.95rem; min-width: 75px; text-align: center; }
+        .badge-pass { background-color: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+        .badge-fail { background-color: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
+        
+        .btn-review { background: #f1f5f9; color: #475569; padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; border: 1px solid #e2e8f0; cursor: pointer; transition: all 0.2s ease; }
+        .history-card:hover .btn-review { background: var(--primary-color); color: white; border-color: var(--primary-color); }
+        
+        /* STILE NUOVO PER IL TASTINO X DI ELIMINAZIONE VIA DIRETTA */
+        .btn-delete { background: none; border: none; color: #94a3b8; font-size: 1.2rem; font-weight: 700; cursor: pointer; padding: 5px 10px; border-radius: 6px; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
+        .btn-delete:hover { background-color: #fee2e2; color: #ef4444; }
+
+        .empty-state { text-align: center; padding: 50px 40px; background: var(--card-bg); border-radius: 14px; border: 2px dashed #cbd5e1; color: #64748b; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}" th:with="activeNav='completed'"></div>
+
+    <div class="exam-container" style="max-width: 1050px; margin-top: 40px;">
+        <h1 class="page-title">Storico Sessioni d'Esame 📚</h1>
+        <p class="page-subtitle">Rivedi le risposte date e analizza i tuoi errori per migliorare il tuo livello di inglese C1.</p>
+
+        <div th:if="${attempts.isEmpty()}" class="empty-state">
+            <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 10px;">Ancora nessun esame completato.</p>
+            <p>Scegli una simulazione dalla Home per metterti alla prova!</p>
+        </div>
+
+        <div th:if="${!attempts.isEmpty()}" class="history-list">
+            <a th:each="att : ${attempts}" th:href="@{/exam/completed/{id}(id=${att.id})}" class="history-card">
+                
+                <div class="exam-info">
+                    <div class="exam-title-group">
+                        <span th:if="${att.exam.type.name() == 'WORD_TRANSFORMATION'}" class="badge-type badge-word">Word</span>
+                        <span th:if="${att.exam.type.name() == 'SENTENCE_TRANSFORMATION'}" class="badge-type badge-sentence">Sentence</span>
+                        <span class="exam-title-text" th:text="${att.exam.title}">Word Transformation - Set 1</span>
+                    </div>
+                    <span class="exam-time" th:text="'Completato il: ' + ${#temporals.format(att.completedAt, 'dd/MM/yyyy HH:mm')}">23/05/2026 18:30</span>
+                </div>
+
+                <div class="exam-stats">
+                    <div class="score-container">
+                        <span class="score-display" th:text="${att.score} + '/' + ${att.totalQuestions}">5/8</span>
+                        <span class="score-label">Esiti</span>
+                    </div>
+                    
+                    <span th:class="${att.getScorePercent() >= 60.0} ? 'percentage-badge badge-pass' : 'percentage-badge badge-fail'"
+                          th:text="${#numbers.formatDecimal(att.getScorePercent(), 1, 1)} + '%'">
+                        62.5%
+                    </span>
+                    
+                    <button type="button" class="btn-review">Rivedi Errori</button>
+
+                    <form th:action="@{/exam/attempt/delete/{id}(id=${att.id})}" 
+                          method="post" 
+                          onclick="event.stopPropagation();" 
+                          onsubmit="return confirm('Vuoi cancellare questa sessione direttamente dallo storico? 🗑️');"
+                          style="display: inline;">
+                        <button type="submit" class="btn-delete" title="Elimina definitivamente">×</button>
+                    </form>
+                    </div>
+                
+            </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Transformation | Gloria C1 Prep</title>
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/exam.css}">
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}" th:with="activeNav='word'"></div>
+
+    <div class="exam-container">
+        <div class="exam-header">
+            <div class="exam-meta">
+                <h2 th:text="${exam.title}">Sentence Transformation</h2>
+            </div>
+            <div class="stopwatch" id="stopwatch">00:00</div>
+        </div>
+
+        <form th:action="@{/exam/submit}" th:object="${submissionForm}" method="post">
+            <input type="hidden" th:field="*{examId}" />
+
+            <div class="exercises-list">
+                <div th:each="ex : ${exam.wordExercises}" class="exercise-item">
+                    <span class="exercise-number" th:text="${ex.orderIndex != 0 ? ex.orderIndex : (exStat.index + 1)} + '.'">1.</span>
+                    
+                    <div class="exercise-content">
+                        <p class="exercise-sentence" th:text="${ex.sentence}">Testo della frase...</p>
+                        
+                        <div class="input-group">
+                            <span class="base-word" th:text="'(' + ${ex.baseWord} + ')'">(BASE)</span>
+                            
+                            <input type="text" 
+                                   th:field="*{responses[__${ex.id}__]}" 
+                                   class="form-control" 
+                                   placeholder="La tua risposta..." 
+                                   autocomplete="off" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exam-footer">
+                <button type="submit" class="btn btn-submit">Consegna</button>
+            </div>
+        </form>
+    </div>
+
+    <script th:src="@{/js/stopwatch.js}"></script>
+</body>
+</html>

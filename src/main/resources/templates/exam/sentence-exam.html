@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentence Transformation | Gloria C1 Prep</title>
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/exam.css}">
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}" th:with="activeNav='sentence'"></div>
+
+    <div class="exam-container">
+        <div class="exam-header">
+            <div class="exam-meta">
+                <h2 th:text="${exam.title}">Sentence Transformation</h2>
+            </div>
+            <div class="stopwatch" id="stopwatch">00:00</div>
+        </div>
+
+        <form th:action="@{/exam/submit}" th:object="${submissionForm}" method="post">
+            <input type="hidden" th:field="*{examId}" />
+
+            <div class="exercises-list">
+                <div th:each="ex : ${exam.sentenceExercises}" class="exercise-item" style="flex-direction: column; gap: 15px;">
+                    
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <span class="exercise-number" th:text="${ex.orderIndex != 0 ? ex.orderIndex : (exStat.index + 1)} + '.'">1.</span>
+                        <p class="exercise-sentence" th:text="${ex.originalSentence}">Frase originale di partenza...</p>
+                    </div>
+                    
+                    <div style="padding-left: 40px;">
+                        <span class="key-word-display" th:text="${ex.keyWord}">KEYWORD</span>
+                    </div>
+
+                    <div class="input-group" style="padding-left: 40px; max-width: 100%;">
+                        <input type="text" 
+                               th:field="*{responses[__${ex.id}__]}" 
+                               class="form-control" 
+                               placeholder="Completa la frase usando da 3 a 6 parole..." 
+                               autocomplete="off" />
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="exam-footer">
+                <button type="submit" class="btn btn-submit">Consegna</button>
+            </div>
+        </form>
+    </div>
+
+    <script th:src="@{/js/stopwatch.js}"></script>
+</body>
+</html>

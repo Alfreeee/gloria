@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GloriaApplication<gloria>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.c1Prep.gloria.GloriaApplication",
+            "projectName": "gloria",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

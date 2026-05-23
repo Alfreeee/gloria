@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risultati Esame | Gloria C1 Prep</title>
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/exam.css}">
+    <style>
+        .results-summary { text-align: center; margin-bottom: 40px; padding: 30px; background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
+        .score-big { font-size: 3.5rem; font-weight: 800; color: var(--primary-color); margin: 10px 0; }
+        
+        .review-item { padding: 25px 0; border-bottom: 1px solid #f1f5f9; display: flex; flex-direction: column; gap: 12px; }
+        .review-item:last-child { border-bottom: none; }
+        
+        .full-sentence-preview { font-size: 1.2rem; color: #1e293b; font-weight: 600; line-height: 1.6; }
+        .full-sentence-preview span.user-correct-inline { color: #16a34a; text-decoration: underline; font-weight: 700; }
+        .full-sentence-preview span.user-wrong-inline { color: #dc2626; text-decoration: line-through; font-weight: 700; }
+        
+        .meta-details { display: flex; flex-direction: column; gap: 6px; padding-left: 20px; border-left: 3px solid #cbd5e1; font-size: 1rem; margin-top: 5px; }
+        .meta-details.border-correct { border-left-color: #16a34a; }
+        .meta-details.border-wrong { border-left-color: #dc2626; }
+        
+        .status-indicator { font-weight: 700; display: inline-flex; align-items: center; gap: 6px; font-size: 0.95rem; }
+        .status-correct { color: #16a34a; }
+        .status-wrong { color: #dc2626; }
+
+        .explanation-box { margin-top: 12px; padding: 15px; background: #f8fafc; border: 1px solid #e2e8f0; color: #334155; border-radius: 8px; display: none; font-size: 0.98rem; line-height: 1.6; text-align: left; }
+        .btn-explain { background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; padding: 6px 14px; font-size: 0.85rem; border-radius: 6px; cursor: pointer; margin-top: 5px; font-weight: 700; text-transform: uppercase; width: max-content; transition: all 0.2s; }
+        .btn-explain:hover { background: #e2e8f0; color: var(--primary-color); }
+        
+        .action-group { display: flex; justify-content: center; gap: 12px; margin-top: 20px; align-items: center; }
+    </style>
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}" th:with="activeNav=''"></div>
+
+    <div class="exam-container" style="max-width: 900px; padding: 40px;">
+        <div class="results-summary">
+            <h2 th:if="${isArchive}" style="color: #64748b; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.5px;">Revisione Archivio Esame 📋</h2>
+
+            <th:block th:if="${!isArchive}">
+                <h2 th:if="${percent >= 60.0}" style="color: #16a34a; font-size: 2rem; font-weight: 800;">Ottimo lavoro, Gloria! Superato! 🎉</h2>
+                <h2 th:if="${percent < 60.0}" style="color: #dc2626; font-size: 2rem; font-weight: 800;">Pippa! Bisogna studiare di più! 🙈</h2>
+            </th:block>
+            
+            <div class="score-big" th:text="${score} + ' / ' + ${totalQuestions}">8 / 8</div>
+            <p style="color: #64748b;">Accuratezza complessiva: <strong style="color: #0f172a;" th:text="${#numbers.formatDecimal(percent, 1, 1)} + '%'">100%</strong></p>
+            
+            <div class="action-group">
+                <a th:href="${isArchive} ? @{/exam/completed} : @{/}" 
+                   class="btn" 
+                   th:text="${isArchive} ? 'Torna allo Storico' : 'Torna alla Home'"
+                   style="display: inline-block; width: auto; padding: 10px 24px;">Torna alla Home</a>
+
+                <form th:if="${isArchive}" 
+                      th:action="@{/exam/attempt/delete/{id}(id=${attempt.id})}" 
+                      method="post" 
+                      onsubmit="return confirm('Vuoi eliminare definitivamente questo tentativo dallo storico? 🗑️');"
+                      style="display: inline;">
+                    <button type="submit" class="btn" style="background-color: #ef4444; width: auto; padding: 10px 24px;">
+                        Elimina Sessione
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--primary-color); border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;">Revisione Analitica</h3>
+        <div class="exercises-list" style="margin-top: 10px;">
+            
+            <div th:if="${exam.type.name() == 'WORD_TRANSFORMATION'}" 
+                 th:each="ex : ${exam.wordExercises}" 
+                 class="review-item"
+                 th:with="userAns=${submissionForm.responses[ex.id]}, isCorrect=${userAns != null && userAns.trim().equalsIgnoreCase(ex.solution.trim())}">
+                
+                <p class="full-sentence-preview">
+                    <span th:text="${exStat.index + 1} + '. '">1.</span>
+                    <span th:text="${ex.sentence.split('_{5}', -1)[0]}"></span>
+                    <span th:class="${isCorrect} ? 'user-correct-inline' : 'user-wrong-inline'" 
+                          th:text="${userAns != null && userAns != '' ? userAns : 'nessuna rispsota'}"></span>
+                    <span th:text="${ex.sentence.split('_{5}', -1)[1]}"></span>
+                </p>
+                
+                <div class="meta-details" th:classappend="${isCorrect} ? 'border-correct' : 'border-wrong'">
+                    <div class="status-indicator" th:classappend="${isCorrect} ? 'status-correct' : 'status-wrong'">
+                        <span th:text="${isCorrect} ? '✓ Corretto' : '× Errato'"></span>
+                        <span style="color: #64748b; font-weight: 400;" th:text="'— Parola base: (' + ${ex.baseWord} + ')'"></span>
+                    </div>
+                    <div th:if="${!isCorrect}" style="color: #475569; font-size: 0.95rem;">
+                        Soluzione attesa: <strong style="color: #16a34a;" th:text="${ex.solution}"></strong>
+                    </div>
+                    <button type="button" class="btn-explain" th:onclick="'loadExplanation(' + ${ex.id} + ', \'WORD\')'">Vedi Regola</button>
+                    <div th:id="'exp-WORD-' + ${ex.id}" class="explanation-box"></div>
+                </div>
+            </div>
+
+            <div th:if="${exam.type.name() == 'SENTENCE_TRANSFORMATION'}" 
+                 th:each="ex : ${exam.sentenceExercises}" 
+                 class="review-item"
+                 th:with="userAns=${submissionForm.responses[ex.id]}, isCorrect=${userAns != null && userAns.trim().equalsIgnoreCase(ex.solution.trim())}">
+                
+                <div style="font-size: 0.95rem; color: #64748b; font-weight: 500;">
+                    <span th:text="${exStat.index + 1} + '.'">1.</span> Frase originale: <span th:text="${ex.originalSentence}" style="color: #0f172a; font-style: italic;"></span>
+                </div>
+                
+                <p class="full-sentence-preview" style="margin-top: 4px; padding-left: 15px;">
+                    ➔ Riscrittura: 
+                    <span th:class="${isCorrect} ? 'user-correct-inline' : 'user-wrong-inline'"
+                          th:text="${userAns != null && userAns != '' ? userAns : '[Nessun testo inserito]'}"></span>
+                </p>
+                
+                <div class="meta-details" th:classappend="${isCorrect} ? 'border-correct' : 'border-wrong'">
+                    <div class="status-indicator" th:classappend="${isCorrect} ? 'status-correct' : 'status-wrong'">
+                        <span th:text="${isCorrect} ? '✓ Corretto' : '× Errato'"></span>
+                        <span style="color: #64748b; font-weight: 400;" th:text="'— Parola chiave obbligatoria: [' + ${ex.keyWord} + ']'"></span>
+                    </div>
+                    <div th:if="${!isCorrect}" style="color: #475569; font-size: 0.95rem;">
+                        Soluzione ufficiale: <strong style="color: #16a34a;" th:text="${ex.solution}"></strong>
+                    </div>
+                    <button type="button" class="btn-explain" th:onclick="'loadExplanation(' + ${ex.id} + ', \'SENTENCE\')'">Vedi Regola</button>
+                    <div th:id="'exp-SENTENCE-' + ${ex.id}" class="explanation-box"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function loadExplanation(id, type) {
+            const box = document.getElementById('exp-' + type + '-' + id);
+            if (box.style.display === 'block') {
+                box.style.display = 'none';
+                return;
+            }
+            box.style.display = 'block';
+            box.innerText = "Recupero della regola linguistica... 🧠";
+
+            fetch('/api/exercises/explain?id=' + id + '&type=' + type)
+                .then(response => response.text())
+                .then(text => { box.innerText = text; })
+                .catch(err => { box.innerText = "Errore nel caricamento della spiegazione."; });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<nav th:fragment="navbar" class="navbar">
+    <a th:href="@{/}" class="navbar-brand">Gloria C1 Prep</a>
+    <ul class="navbar-links">
+        <li><a th:href="@{/exam/word-transformation/new}"
+               th:classappend="${activeNav == 'word'} ? 'active'">
+            Word Transformation
+        </a></li>
+        <li><a th:href="@{/exam/sentence-transformation/new}"
+               th:classappend="${activeNav == 'sentence'} ? 'active'">
+            Sentence Transformation
+        </a></li>
+        <li><a th:href="@{/exam/completed}"
+            th:classappend="${activeNav == 'completed'} ? 'active nav-completed' : 'nav-completed'">
+            Esami Svolti
+        </a></li>
+    </ul>
+</nav>
+</body>
+</html>

@@ -1,0 +1,227 @@
+/* =========================================================================
+   LAYOUT CONTENITORE DELL'ESAME
+   ========================================================================= */
+.exam-container {
+    background: var(--card-bg);
+    max-width: 900px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================================================
+   HEADER DELL'ESAME (Titolo, Badge e Cronometro)
+   ========================================================================= */
+.exam-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 24px;
+    margin-bottom: 35px;
+}
+
+.exam-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.exam-meta h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Badge dinamici per le parti del CAE */
+.exam-badge {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-word {
+    background-color: #eff6ff;
+    color: var(--secondary-color);
+    border: 1px solid #bfdbfe;
+}
+
+.badge-sentence {
+    background-color: #ecfdf5;
+    border: 1px solid #a7f3d0;
+}
+
+/* Cronometro */
+.stopwatch {
+    font-family: monospace;
+    font-size: 1.3rem;
+    font-weight: 700;
+    background: #f1f5f9;
+    color: #475569;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    letter-spacing: 1px;
+}
+
+/* =========================================================================
+   LISTA DEGLI ESERCIZI (Struttura Righe)
+   ========================================================================= */
+.exercises-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.exercise-item {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 25px;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.exercise-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.exercise-number {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #94a3b8;
+    margin-top: 2px;
+    min-width: 25px;
+}
+
+.exercise-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.exercise-sentence {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* =========================================================================
+   INPUT GROUP (La parola base / la parola chiave + Input)
+   ========================================================================= */
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 550px;
+    width: 100%;
+}
+
+/* Parola della Part 3 (Word Transformation) */
+.base-word {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 120px;
+}
+
+/* Variante per la parola chiave della Part 4 (Sentence Transformation) */
+.key-word-display {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 6px;
+}
+
+/* Campo di testo per l'inserimento */
+.form-control {
+    flex: 1;
+    padding: 10px 16px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-color);
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    background-color: #ffffff;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+/* Se siamo in un esame Sentence, il focus diventa verde */
+.exam-container:has(.badge-sentence) .form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+}
+
+.form-control::placeholder {
+    color: #94a3b8;
+    font-weight: 400;
+    font-size: 0.95rem;
+}
+
+/* =========================================================================
+   FOOTER (Pulsante Consegna)
+   ========================================================================= */
+.exam-footer {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 2px solid #f1f5f9;
+    padding-top: 30px;
+}
+
+.btn-submit {
+    max-width: 200px;
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+}
+
+/* Cambio colore del bottone finale se l'esame è di tipo Sentence */
+.exam-container:has(.badge-sentence) .btn-submit {
+    background-color: var(--accent-color);
+    box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.3);
+}
+
+.exam-container:has(.badge-sentence) .btn-submit:hover {
+    background-color: var(--accent-color-hover);
+}
+
+/* Responsive fixes */
+@media (max-width: 640px) {
+    .exam-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+    .exam-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .input-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .base-word {
+        min-width: auto;
+    }
+    .btn-submit {
+        max-width: 100%;
+    }
+}

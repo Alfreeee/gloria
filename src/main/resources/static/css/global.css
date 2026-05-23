@@ -1,0 +1,192 @@
+:root {
+    --primary-color: #1e3a8a; /* Blu scuro accademico */
+    --secondary-color: #3b82f6; /* Blu brillante */
+    --accent-color: #10b981; /* Verde smeraldo per Sentence */
+    --accent-color-hover: #065f46;
+    --bg-color: #f8fafc; /* Grigio chiarissimo di sfondo */
+    --text-color: #334155; /* Grigio scuro per il testo */
+    --card-bg: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+.welcome-header {
+    margin-bottom: 40px;
+}
+
+.welcome-header h1 {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.welcome-header p {
+    font-size: 1.2rem;
+    color: #64748b;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 35px 25px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+.icon-box {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.btn {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+}
+
+/* Variante colore per differenziare Sentence Transformation */
+.card-sentence .btn {
+    background-color: var(--accent-color);
+}
+.card-sentence .btn:hover {
+    background-color: var(--accent-color-hover);
+}
+.card-sentence h2 {
+    color: var(--accent-color-hover);
+}
+
+.footer {
+    margin-top: 40px;
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+
+/** TOPBAR **/
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--card-bg);
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    z-index: 100;
+    padding: 0 40px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    letter-spacing: 0.3px;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #64748b;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navbar-links a:hover {
+    background: #f1f5f9;
+    color: var(--primary-color);
+}
+
+.navbar-links a.active {
+    background: #eff6ff;
+    color: var(--secondary-color);
+}
+
+.navbar-links a.nav-completed {
+    color: var(--accent-color-hover);
+}
+
+.navbar-links a.nav-completed:hover {
+    background: #ecfdf5;
+    color: var(--accent-color-hover);
+}
+
+body {
+    padding-top: 64px;
+}

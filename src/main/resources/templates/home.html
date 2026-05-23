@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gloria C1 Prep | Home</title>
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}" th:with="activeNav=''"></div>
+    <div class="container">
+        
+        <div class="welcome-header">
+            <h1>Benvenuta, Gloria! 👋</h1>
+            <p>Seleziona la tipologia di esercizio per iniziare la tua preparazione al livello C1 Advanced.</p>
+        </div>
+
+        <div class="grid-container">
+            
+            <div class="card card-word">
+                <div>
+                    <h2>Word Transformation</h2>
+                    <p>Usa Of English - Part 3.<br>Allena la tua morfologia trasformando le parole base (es. verbi in sostantivi o aggettivi) nel contesto corretto.</p>
+                </div>
+                <form th:action="@{/exam/word-transformation/new}" method="get" style="width: 100%;">
+                    <button type="submit" class="btn">Scegli Word</button>
+                </form>
+            </div>
+
+            <div class="card card-sentence">
+                <div>
+                    <h2>Sentence Transformation</h2>
+                    <p>Use Of English - Part 4.<br>Riscrivi la frase mantenendo lo stesso significato, utilizzando obbligatoriamente una parola chiave data.</p>
+                </div>
+                <form th:action="@{/exam/sentence-transformation/new}" method="get" style="width: 100%;">
+                    <button type="submit" class="btn">Scegli Sentence</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p>Gloria C1 Prep Application &bull; Configurazione JPA &amp; PostgreSQL Attiva</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
